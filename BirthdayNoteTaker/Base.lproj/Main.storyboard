@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,83 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BirthdayNoteTaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gjE-Hc-sKK">
+                                <rect key="frame" x="41" y="137" width="331" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yDj-ym-Y59">
+                                <rect key="frame" x="42" y="194" width="331" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pxl-4O-2Ju">
+                                <rect key="frame" x="42" y="257" width="147" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="hBR-Je-6fb"/>
+                                </constraints>
+                                <state key="normal" title="SAVE"/>
+                                <connections>
+                                    <action selector="saveClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aVZ-iq-4GN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ls1-nu-1AL">
+                                <rect key="frame" x="42" y="318" width="331" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Birthday :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nke-h7-mkd">
+                                <rect key="frame" x="42" y="377" width="330" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fuz-PH-pZU">
+                                <rect key="frame" x="228" y="257" width="145" height="30"/>
+                                <state key="normal" title="DELETE"/>
+                                <connections>
+                                    <action selector="deleteClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gtb-oO-8ki"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gjE-Hc-sKK" firstAttribute="centerX" secondItem="nke-h7-mkd" secondAttribute="centerX" id="06B-He-Avj"/>
+                            <constraint firstItem="gjE-Hc-sKK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="24J-Mz-cLN"/>
+                            <constraint firstItem="Pxl-4O-2Ju" firstAttribute="top" secondItem="yDj-ym-Y59" secondAttribute="bottom" constant="29" id="4Jr-zw-tpk"/>
+                            <constraint firstItem="nke-h7-mkd" firstAttribute="top" secondItem="Ls1-nu-1AL" secondAttribute="bottom" constant="38" id="6xH-pe-nQc"/>
+                            <constraint firstItem="yDj-ym-Y59" firstAttribute="trailing" secondItem="Fuz-PH-pZU" secondAttribute="trailing" id="Dnz-wb-KoM"/>
+                            <constraint firstItem="yDj-ym-Y59" firstAttribute="leading" secondItem="Pxl-4O-2Ju" secondAttribute="leading" id="HW7-st-dbE"/>
+                            <constraint firstItem="Ls1-nu-1AL" firstAttribute="top" secondItem="Pxl-4O-2Ju" secondAttribute="bottom" constant="31" id="LVY-aM-tR7"/>
+                            <constraint firstItem="gjE-Hc-sKK" firstAttribute="trailing" secondItem="nke-h7-mkd" secondAttribute="trailing" id="Lcw-1X-rRX"/>
+                            <constraint firstItem="Fuz-PH-pZU" firstAttribute="leading" secondItem="Pxl-4O-2Ju" secondAttribute="trailing" constant="39" id="MSj-0n-DCF"/>
+                            <constraint firstItem="gjE-Hc-sKK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="93" id="MTi-Rc-QSN"/>
+                            <constraint firstItem="Ls1-nu-1AL" firstAttribute="leading" secondItem="nke-h7-mkd" secondAttribute="leading" id="Nsy-T2-rQw"/>
+                            <constraint firstItem="Ls1-nu-1AL" firstAttribute="centerX" secondItem="nke-h7-mkd" secondAttribute="centerX" id="OK2-2a-ZGD"/>
+                            <constraint firstItem="Pxl-4O-2Ju" firstAttribute="baseline" secondItem="Fuz-PH-pZU" secondAttribute="baseline" id="Q12-mc-9w7"/>
+                            <constraint firstItem="yDj-ym-Y59" firstAttribute="top" secondItem="gjE-Hc-sKK" secondAttribute="bottom" constant="23" id="dAU-De-tAa"/>
+                            <constraint firstItem="Fuz-PH-pZU" firstAttribute="trailing" secondItem="Ls1-nu-1AL" secondAttribute="trailing" id="ov1-TE-oGS"/>
+                            <constraint firstItem="gjE-Hc-sKK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rua-hb-skx"/>
+                            <constraint firstItem="Pxl-4O-2Ju" firstAttribute="leading" secondItem="Ls1-nu-1AL" secondAttribute="leading" id="wxi-7d-Ksj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="birthdayLabel" destination="nke-h7-mkd" id="tYB-fW-B1J"/>
+                        <outlet property="birthdayTextField" destination="yDj-ym-Y59" id="Blh-6C-nir"/>
+                        <outlet property="nameLabel" destination="Ls1-nu-1AL" id="2WJ-Er-50K"/>
+                        <outlet property="nameTextField" destination="gjE-Hc-sKK" id="wcS-sR-Gx5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
